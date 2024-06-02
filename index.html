@@ -1,21 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>proboscious macaque</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        #hero{
+            visibility: hidden;
+        }
+
+        img{
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-    <h1>teste</h1>
-    <img id="imagem" src="edmotta1.png"></img>
-    <audio autoplay id="grito" src=""></audio>
-    <button onclick="grito()">Aperte</button>
-    
+    <input type="button" id="bt1" onclick="chamou()" value="Chamar o Ed Motta">
+    <audio id="musica" src="" autoplay></audio>
+
+    <div id="hero">
+        <img id="edmotta" src="edmotta1.png">
+        <br><input type="button" id="bt2" onclick="carinho()" value="Acariciar">
+        <audio id="grito" src="" autoplay></audio>
+    </div>
+
     <script>
-        function grito(){
-            document.getElementById("imagem").src = "edmotta2.png"
-            document.getElementById("grito").src = "grito.mp3"
+        var hero = document.getElementById("hero")
+        var edmotta = document.getElementById("edmotta")
+        var grito = document.getElementById("grito")
+        var bt1 = document.getElementById("bt1")
+        var musica = document.getElementById("musica")
+
+        function chamou(){
+            hero.style.visibility = "visible"
+            bt1.style.display = "none"
+            musica.src = "musicamedonha.mp3"
+        }
+
+        function normal(){
+            edmotta.src = "edmotta1.png"
+        }
+
+        function carinho(){
+            edmotta.src = "edmotta2.png"
+            grito.src = "grito.mp3"
+            setTimeout(normal, 2500)
         }
     </script>
 </body>
